@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<div id="root">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <p class="text-header">Calendar</p>
+            </div>
+            <div class="col-2">
+                <select id="members" class="members">
+                    <option value="All members" selected>All members</option>
+                </select>
+            </div>
+            <div class="col-2 d-flex justify-content-end">
+                <button class="button-common" id="new-event">New event +</button>
+            </div>
+        </div>
+        <table class="table table-bordered calendar text-center table-sm">
+            <thead class="thead-light">
+            <tr>
+                <th>Name</th><th>Mon</th><th>Tue</th>
+                <th>Wed</th><th>Thu</th><th>Fri</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="creat-new-event" hidden>
+        <div class="row-12 error-window" hidden>
+            <div class="error-window-container">
+                <div class='round-with-cross'><span>&#10005;</span></div>
+                <p class="error-text"></p>
+            </div>
+            <div>
+                <span class="error-button-cancel">&#10005;</span>
+            </div>
+        </div>
+        <div class="row-12 padding">
+            <div class="col-lg-3 col-md-4 offset-lg-2 offset-md-1 display-flex">
+                <p>Name of the event:</p>
+                <input id="event-name-modal"/>
+            </div>
+        </div>
+        <div class="row-12 padding">
+            <div class="col-lg-3 col-md-4 offset-lg-2 offset-md-1 display-flex">
+                <p>Participants:</p>
+                <form>
+                    <div class="multi-select">
+                        <div class="selectBox">
+                            <select class="members">
+                                <option id="modal-select">Select members</option>
+                            </select>
+                            <div class="over-select"></div>
+                        </div>
+                        <div id="checkboxes">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row-12 padding">
+            <div class="col-lg-3 col-md-4 offset-lg-2 offset-md-1 display-flex">
+                <p>Day:</p>
+                <select class="members" id="modal-days">
+                    <option value="" disabled selected>Select day</option>
+                </select>
+            </div>
+        </div>
+        <div class="row-12 padding">
+            <div class="col-lg-3 col-md-4 offset-lg-2 offset-md-1 display-flex">
+                <p>Time:</p>
+                <select class="members" id="modal-time">
+                    <option value="" disabled selected>Select time</option>
+                </select>
+            </div>
+        </div>
+        <div class="row-12 padding">
+            <div class="col-4 offset-5">
+                <button class="button-common" id="cancel-event">Cancel</button>
+                <button class="button-common" id="create-event">Create</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
